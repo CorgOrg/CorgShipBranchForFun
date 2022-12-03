@@ -590,7 +590,7 @@
 
 /obj/docking_port/mobile/pod/request(obj/docking_port/stationary/S)
 	var/obj/machinery/computer/shuttle_flight/C = getControlConsole()
-	if(!istype(C, /obj/machinery/computer/shuttle_flight/pod))
+	if(!istype(C, /obj/machinery/computer/shuttle_flight/pod) || !istype(S, /obj/docking_port/stationary/transit))
 		return ..()
 	if(GLOB.security_level >= SEC_LEVEL_RED || (C && (C.obj_flags & EMAGGED)))
 		if(launch_status == UNLAUNCHED)
@@ -619,6 +619,11 @@
 	. = ..()
 	RegisterSignal(SSdcs, COMSIG_GLOB_SECURITY_ALERT_CHANGE, .proc/handle_alert)
 
+/obj/machinery/computer/shuttle_flight/pod/examine(mob/user)
+	. = ..()
+	if(obj_flags & EMAGGED)
+		. += "<span class='warning'>A warning on the monitor reads: 'AUTOMATIC BREAKING SYSTEMS DISABLED'. This can't end well...</span>"
+
 /obj/machinery/computer/shuttle_flight/pod/proc/handle_alert(datum/source, new_alert)
 	SIGNAL_HANDLER
 	admin_controlled = (new_alert < SEC_LEVEL_RED) // admin_controlled is FALSE if its red or delta
@@ -634,6 +639,13 @@
 	. = ..()
 	if(recall_docking_port_id == initial(recall_docking_port_id) || override)
 		recall_docking_port_id = "pod_lavaland[idnum]"
+		valid_docks = list("pod_lavaland[idnum]")
+
+/obj/machinery/computer/shuttle_flight/pod/launch_shuttle()
+	var/datum/orbital_object/shuttle/launched_shuttle = ..()
+	if(launched_shuttle && (obj_flags & EMAGGED))
+		launched_shuttle.force_crash = TRUE
+	return launched_shuttle
 
 /obj/docking_port/stationary/random
 	name = "escape pod"

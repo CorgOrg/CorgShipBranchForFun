@@ -48,6 +48,8 @@
 	rapid_melee = 2
 	do_footstep = TRUE
 	mobchatspan = "syndmob"
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate
+	antagonist_name = "Syndicate Operative Ghost Spawn"
 
 ///////////////Melee////////////
 
@@ -61,6 +63,7 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/space
 
 /mob/living/simple_animal/hostile/syndicate/space/Initialize(mapload)
 	. = ..()
@@ -72,6 +75,7 @@
 	name = "Syndicate Stormtrooper"
 	maxHealth = 250
 	health = 250
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/space/stormtrooper
 
 /mob/living/simple_animal/hostile/syndicate/melee //dude with a knife and no shields
 	melee_damage = 15
@@ -83,6 +87,7 @@
 	status_flags = 0
 	var/projectile_deflect_chance = 0
 	hardattacks = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee
 
 /mob/living/simple_animal/hostile/syndicate/melee/space
 	icon_state = "syndicate_space_knife"
@@ -96,6 +101,7 @@
 	spacewalk = TRUE
 	projectile_deflect_chance = 50
 	hardattacks = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee/space
 
 /mob/living/simple_animal/hostile/syndicate/melee/space/Initialize(mapload)
 	. = ..()
@@ -108,6 +114,7 @@
 	maxHealth = 250
 	health = 250
 	projectile_deflect_chance = 50
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee/space/stormtrooper
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword
 	melee_damage = 30
@@ -118,6 +125,7 @@
 	armour_penetration = 35
 	light_color = LIGHT_COLOR_RED
 	status_flags = 0
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee/sword
 	var/obj/effect/light_emitter/red_energy_sword/sord
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/Initialize(mapload)
@@ -138,6 +146,7 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee/sword/space
 
 /mob/living/simple_animal/hostile/syndicate/melee/sword/space/Initialize(mapload)
 	. = ..()
@@ -154,6 +163,7 @@
 	name = "Syndicate Stormtrooper"
 	maxHealth = 250
 	health = 250
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/melee/sword/space/stormtrooper
 
 ///////////////Guns////////////
 
@@ -168,6 +178,7 @@
 	loot = list(/obj/effect/gibspawner/human)
 	dodging = FALSE
 	rapid_melee = 1
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged
 
 /mob/living/simple_animal/hostile/syndicate/ranged/infiltrator //shuttle loan event
 	projectilesound = 'sound/weapons/gunshot_silenced.ogg'
@@ -183,6 +194,7 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/space
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space/Initialize(mapload)
 	. = ..()
@@ -194,6 +206,7 @@
 	name = "Syndicate Stormtrooper"
 	maxHealth = 250
 	health = 250
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/space/stormtrooper
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg
 	rapid = 2
@@ -201,6 +214,7 @@
 	icon_living = "syndicate_smg"
 	casingtype = /obj/item/ammo_casing/c45
 	projectilesound = 'sound/weapons/gunshot_smg.ogg'
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/smg
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/pilot //caravan ambush ruin
 	name = "Syndicate Salvage Pilot"
@@ -216,6 +230,7 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/smg/space
 
 /mob/living/simple_animal/hostile/syndicate/ranged/smg/space/Initialize(mapload)
 	. = ..()
@@ -227,6 +242,7 @@
 	name = "Syndicate Stormtrooper"
 	maxHealth = 250
 	health = 250
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/smg/space/stormtrooper
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun
 	rapid = 2
@@ -235,6 +251,7 @@
 	icon_state = "syndicate_shotgun"
 	icon_living = "syndicate_shotgun"
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot //buckshot (up to 72.5 brute) fired in a two-round burst
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/shotgun
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space
 	icon_state = "syndicate_space_shotgun"
@@ -246,6 +263,7 @@
 	minbodytemp = 0
 	speed = 1
 	spacewalk = TRUE
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/shotgun/space
 
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/Initialize(mapload)
 	. = ..()
@@ -257,6 +275,7 @@
 	name = "Syndicate Stormtrooper"
 	maxHealth = 250
 	health = 250
+	human_outfit_replacement = /datum/outfit/simplemob/syndicate/ranged/shotgun/space/stormtrooper
 
 ///////////////Misc////////////
 

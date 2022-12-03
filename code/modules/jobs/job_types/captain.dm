@@ -53,6 +53,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/caphat
+	l_pocket = /obj/item/navigation_map
 	backpack_contents = list(/obj/item/melee/classic_baton/police/telescopic=1, /obj/item/station_charter=1)
 
 	backpack = /obj/item/storage/backpack/captain

@@ -1,5 +1,6 @@
 #define CLEAR_TURF_PROCESSING_TIME (120 SECONDS)	//Time it takes to clear all turfs
 #define CHECK_ZLEVEL_TICKS (5 SECONDS)			//Every 5 seconds check if a tracked z-level is free.
+#define ZCLEAR_MOB_DEATH_GRACE_TIME 8 MINUTES	//After 8 minutes of mobs being dead on a z-level, the z-level will be wiped.
 
 GLOBAL_LIST_EMPTY(zclear_atoms)
 GLOBAL_LIST_EMPTY(zclear_blockers)
@@ -30,12 +31,45 @@ SUBSYSTEM_DEF(zclear)
 	//List of z-levels being docked with
 	var/list/docking_levels = list()
 
-	//Announced zombie levels
-	var/list/announced_zombie_levels = list()
+	//Grace period time for mob deaths
+	var/list/z_level_death_grace = list()
+
+	//The amoutn of ticks we fell behind on processing
+	var/processing_fallbehind = 0
+
+	//Current run
+	var/processing_start = 0
+	var/processing_end = 0
 
 /datum/controller/subsystem/zclear/New()
 	. = ..()
 	ignored_atoms = typecacheof(list(/mob/dead, /mob/camera, /mob/dview, /atom/movable/lighting_object, /obj/effect/abstract/mirage_holder))
+
+/datum/controller/subsystem/zclear/fire(resumed)
+	if(times_fired % CHECK_ZLEVEL_TICKS == 0)
+		check_for_empty_levels()
+	if(!processing_start || !processing_end)
+		processing_start = 1
+		processing_end = length(processing_levels)
+	for(var/i in processing_start to processing_end)
+		//Element was deleted during processing
+		if(i > length(processing_levels))
+			processing_start = 0
+			processing_end = 0
+			return
+		var/datum/zclear_data/cleardata = processing_levels[i]
+		//If we are forced to early return (overrun), then continue from the next element
+		processing_start = i + 1
+		//Process current element
+		if(!continue_wipe(cleardata))
+			processing_fallbehind ++
+			return
+	//Reset the processor
+	if(processing_start >= processing_end)
+		processing_start = 0
+
+/datum/controller/subsystem/zclear/stat_entry(msg)
+	. = ..("Processing: [length(processing_levels)], Free: [length(free_levels)], Fallbehind: [processing_fallbehind], Start: [processing_start], End: [processing_end]")
 
 /datum/controller/subsystem/zclear/Recover()
 	if(!islist(autowipe)) autowipe = list()
@@ -48,13 +82,6 @@ SUBSYSTEM_DEF(zclear)
 	ignored_atoms |= SSzclear.ignored_atoms
 	nullspaced_mobs |= SSzclear.nullspaced_mobs
 	docking_levels |= SSzclear.docking_levels
-	announced_zombie_levels |= SSzclear.announced_zombie_levels
-
-/datum/controller/subsystem/zclear/fire(resumed)
-	if(times_fired % CHECK_ZLEVEL_TICKS == 0)
-		check_for_empty_levels()
-	for(var/datum/zclear_data/cleardata as() in processing_levels)
-		continue_wipe(cleardata)
 
 /*
  * Checks for empty z-levels and wipes them.
@@ -76,6 +103,8 @@ SUBSYSTEM_DEF(zclear)
 			if(L.stat != DEAD)
 				active_levels["[T.z]"] = TRUE
 				living_levels["[T.z]"] = TRUE
+				//Set the grace time for clearing this level
+				z_level_death_grace["[T.z]"] = world.time + ZCLEAR_MOB_DEATH_GRACE_TIME
 	//Check active nukes
 	for(var/obj/machinery/nuclearbomb/decomission/bomb in GLOB.decomission_bombs)
 		if(bomb.timing)
@@ -107,14 +136,19 @@ SUBSYSTEM_DEF(zclear)
 		if(!level)
 			autowipe -= level
 
+		//Check if grace is active
+		if(world.time < z_level_death_grace["[level.z_value]"])
+			continue
+
 		//Check if free
 		if(active_levels["[level.z_value]"])
-			if(!living_levels["[level.z_value]"] && mob_levels["[level.z_value]"] && !announced_zombie_levels["[level.z_value]"])
-				//Zombie level detected.
-				announced_zombie_levels["[level.z_value]"] = TRUE
-				var/datum/orbital_object/linked_object = SSorbits.assoc_z_levels["[level.z_value]"]
-				if(linked_object)
-					priority_announce("Nanotrasen long ranged sensors have indicated that all sentient life forms at priority waypoint [linked_object.name] have ceased life functions. Command is recommended to establish a rescue operation to recover the bodies. Due to the nature of the threat at this location, security personnel armed with lethal weaponry is recommended to accompany the rescue team.", "Nanotrasen Long Range Sensors")
+			if(!living_levels["[level.z_value]"] && mob_levels["[level.z_value]"])
+				//Yoink all mobs
+				for(var/mob/living/L as() in GLOB.mob_living_list)
+					if(L.z != level.z_value || !L.mind)
+						continue
+					nullspaced_mobs |= L
+					L.moveToNullspace()
 			continue
 		//Level is free, do the wiping thing.
 		LAZYREMOVE(autowipe, level)
@@ -122,6 +156,14 @@ SUBSYSTEM_DEF(zclear)
 		QDEL_NULL(SSorbits.assoc_z_levels["[level.z_value]"])
 		//Continue tracking after
 		wipe_z_level(level.z_value, TRUE)
+	if(length(nullspaced_mobs))
+		kidnap_mobs()
+
+/datum/controller/subsystem/zclear/proc/kidnap_mobs()
+	//Handle nullspaced mobs
+	if(length(nullspaced_mobs))
+		SSorbits.create_hostage_ship(nullspaced_mobs)
+		nullspaced_mobs.Cut()
 
 //Temporarily stops a z from being wiped for 30 seconds.
 /datum/controller/subsystem/zclear/proc/temp_keep_z(z_level)
@@ -202,21 +244,19 @@ SUBSYSTEM_DEF(zclear)
 		if(A.z == z_level)
 			qdel(A, TRUE)
 
-	//Unannounce zombie level
-	announced_zombie_levels["[z_level]"] = FALSE
-
 /*
  * Continues the process of wiping a z-level.
 */
 /datum/controller/subsystem/zclear/proc/continue_wipe(datum/zclear_data/cleardata)
 	var/list_element = (cleardata.process_num % (CLEAR_TURF_PROCESSING_TIME * 0.5)) + 1
+	. = TRUE
 	switch(cleardata.process_num)
 		if(0 to (CLEAR_TURF_PROCESSING_TIME*0.5)-1)
 			if(list_element <= length(cleardata.divided_turfs))
-				reset_turfs(cleardata.divided_turfs[list_element])
+				. = reset_turfs(cleardata.divided_turfs[list_element])
 		if((CLEAR_TURF_PROCESSING_TIME*0.5) to (CLEAR_TURF_PROCESSING_TIME-1))
 			if(list_element <= length(cleardata.divided_turfs))
-				clear_turf_atoms(cleardata.divided_turfs[list_element])
+				. = clear_turf_atoms(cleardata.divided_turfs[list_element])
 		else
 			//Done
 			LAZYREMOVE(processing_levels, cleardata)
@@ -228,16 +268,9 @@ SUBSYSTEM_DEF(zclear)
 				cleardata.completion_callback.Invoke(cleardata.zvalue)
 			if(cleardata.tracking)
 				LAZYADD(free_levels, SSmapping.z_list[cleardata.zvalue])
-			if(length(nullspaced_mobs))
-				var/nullspaced_mob_names = ""
-				var/valid = FALSE
-				for(var/mob/M as() in nullspaced_mobs)
-					if(M.key || M.get_ghost(FALSE, TRUE))
-						nullspaced_mob_names += " - [M.name]\n"
-						valid = TRUE
-				if(valid)
-					priority_announce("Sensors indicate that multiple crewmembers have been lost at an abandoned station. They can potentially be recovered by flying to the nearest derelict station and locating their bodies.\n[nullspaced_mob_names]")
-	cleardata.process_num ++
+	//Process num needs incrementing
+	if(.)
+		cleardata.process_num ++
 
 /*
  * Deletes all the atoms within a given turf.
@@ -324,9 +357,14 @@ SUBSYSTEM_DEF(zclear)
 	var/turf/T = locate(_x, _y, _z)
 	AM.forceMove(T)
 
+/**
+ * Resets a list of turfs provided.
+ * Is MC tick checked.
+ * The list coming in should be a reference, as it is reduced if this proc overruns.
+ */
 /datum/controller/subsystem/zclear/proc/reset_turfs(list/turfs)
-	var/list/new_turfs = list()
-	for(var/turf/T as() in turfs)
+	for(var/i in 1 to length(turfs))
+		var/turf/T = turfs[i]
 		var/turf/newT
 		if(istype(T, /turf/open/space))
 			newT = T
@@ -337,8 +375,11 @@ SUBSYSTEM_DEF(zclear)
 			newA.contents += newT
 			newT.change_area(newT.loc, newA)
 		newT.flags_1 &= ~NO_RUINS_1
-		new_turfs += newT
-	return new_turfs
+		//Check for overrun
+		if(MC_TICK_CHECK)
+			turfs.Cut(1, i)
+			return FALSE
+	return TRUE
 
 /datum/zclear_data
 	var/zvalue

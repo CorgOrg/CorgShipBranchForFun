@@ -30,23 +30,6 @@
 /obj/structure/sign/nanotrasen,
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/transport)
-"h" = (
-/obj/structure/shuttle/engine/propulsion/left{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/transport)
-"i" = (
-/obj/structure/window/shuttle,
-/obj/structure/grille,
-/obj/structure/shuttle/engine/heater{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/shuttle/transport)
 "j" = (
 /obj/structure/sign/warning/fire,
 /turf/closed/wall/mineral/titanium/nodiagonal,
@@ -74,64 +57,6 @@
 /obj/machinery/recharger,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
-"o" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/chair/fancy/shuttle,
-/obj/machinery/light{
-	dir = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/transport)
-"p" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/transport)
-"q" = (
-/obj/machinery/computer/shuttle_flight/ferry/request{
-	dir = 4
-	},
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/transport)
-"t" = (
-/obj/machinery/door/airlock/shuttle{
-	name = "Ferry Shuttle Airlock"
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/obj/structure/fans/tiny,
-/obj/docking_port/mobile{
-	dir = 8;
-	dwidth = 2;
-	height = 11;
-	id = "ferry";
-	name = "ferry shuttle";
-	preferred_direction = 4;
-	width = 5
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/transport)
-"u" = (
-/obj/structure/shuttle/engine/propulsion/right{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/transport)
 "w" = (
 /obj/effect/turf_decal/bot,
 /obj/structure/chair/fancy/shuttle{
@@ -139,15 +64,101 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
-"x" = (
+"z" = (
+/obj/structure/window/shuttle,
+/obj/structure/grille,
+/obj/machinery/power/engine_capacitor_bank{
+	dir = 4
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/shuttle/transport)
+"A" = (
 /obj/effect/turf_decal/bot,
-/obj/structure/chair/fancy/shuttle{
+/obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/light,
+/obj/structure/chair/fancy/shuttle,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
-"E" = (
+"B" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/transport)
+"G" = (
+/obj/structure/window/shuttle,
+/obj/structure/grille,
+/obj/machinery/power/engine_capacitor_bank{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/shuttle/transport)
+"J" = (
+/obj/structure/window/shuttle,
+/obj/structure/grille,
+/obj/machinery/power/engine_capacitor_bank{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/shuttle/transport)
+"L" = (
+/obj/structure/chair/fancy/shuttle{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/transport)
+"O" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/transport)
+"Q" = (
+/obj/machinery/computer/shuttle_flight/ferry/request{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/transport)
+"S" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -157,7 +168,42 @@
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
-"L" = (
+"V" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/light,
+/obj/machinery/power/smes/engineering{
+	charge = 5e+006
+	},
+/obj/structure/cable/yellow,
+/turf/open/floor/plating,
+/area/shuttle/transport)
+"W" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/machinery/shuttle/engine/ion/burst{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/transport)
+"X" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/stripes/corner,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/transport)
+"Y" = (
 /obj/structure/rack,
 /obj/effect/turf_decal/bot,
 /obj/item/radio{
@@ -179,103 +225,104 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
-"U" = (
+"Z" = (
+/obj/machinery/door/airlock/shuttle{
+	name = "Ferry Shuttle Airlock"
+	},
 /obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/tile/neutral/opposingcorners,
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/transport)
-"Y" = (
-/obj/effect/turf_decal/stripes/corner,
-/obj/effect/turf_decal/stripes/corner{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	dir = 8;
+	dwidth = 2;
+	faction_type = /datum/faction/nanotrasen/central_command;
+	height = 11;
+	id = "ferry";
+	name = "ferry shuttle";
+	preferred_direction = 4;
+	width = 5
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/transport)
 
 (1,1,1) = {"
 a
-h
-p
-u
+W
+W
+W
 a
 "}
 (2,1,1) = {"
 b
-i
-i
-i
+J
+G
+z
 b
 "}
 (3,1,1) = {"
 c
 j
-q
+Q
 j
 c
 "}
 (4,1,1) = {"
 d
 k
-U
 L
+Y
 d
 "}
 (5,1,1) = {"
 e
 l
-U
+B
 w
 e
 "}
 (6,1,1) = {"
 d
 l
-U
+B
 w
 d
 "}
 (7,1,1) = {"
 f
-E
-Y
-E
+S
+X
+S
 f
 "}
 (8,1,1) = {"
 g
 n
-U
+B
 n
 g
 "}
 (9,1,1) = {"
 e
 l
-U
+B
 w
 e
 "}
 (10,1,1) = {"
 d
-o
-U
-x
+A
+O
+V
 d
 "}
 (11,1,1) = {"
 d
 e
-t
+Z
 e
 d
 "}

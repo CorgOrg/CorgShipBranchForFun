@@ -386,8 +386,7 @@
 		/obj/item/discovery_scanner,
 		/obj/item/gun/energy/e_gun/mini/exploration,
 		/obj/item/grenade/exploration,
-		/obj/item/exploration_detonator,
-		/obj/item/research_disk_pinpointer
+		/obj/item/exploration_detonator
 		))
 
 

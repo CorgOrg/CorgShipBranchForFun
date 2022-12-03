@@ -6,22 +6,19 @@
 /turf/closed/wall,
 /area/shuttle/hunter)
 "c" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 1
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
 /area/shuttle/hunter)
 "d" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
 "e" = (
-/obj/machinery/portable_atmospherics/scrubber/huge,
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden,
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "f" = (
@@ -31,10 +28,23 @@
 "g" = (
 /turf/open/floor/plating,
 /area/shuttle/hunter)
-"j" = (
-/obj/effect/turf_decal/bot,
-/obj/effect/decal/cleanable/dirt,
+"h" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
+/area/shuttle/hunter)
+"i" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"j" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/shuttle/hunter)
 "k" = (
 /turf/open/floor/mineral/plastitanium/red,
@@ -73,7 +83,8 @@
 /area/shuttle/hunter)
 "r" = (
 /obj/effect/turf_decal/arrows{
-	dir = 4
+	dir = 4;
+	icon_state = "arrows"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
@@ -105,7 +116,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
 "x" = (
-/obj/effect/turf_decal/bot,
+/obj/effect/mob_spawn/human/fugitive/russian{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "y" = (
@@ -113,7 +129,8 @@
 /area/shuttle/hunter)
 "z" = (
 /obj/structure/chair{
-	dir = 4
+	dir = 4;
+	icon_state = "chair"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
@@ -137,8 +154,20 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
 "D" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/bot,
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"E" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
 /area/shuttle/hunter)
 "F" = (
 /obj/effect/turf_decal/bot,
@@ -169,6 +198,12 @@
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
+"K" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/hunter)
 "L" = (
 /obj/effect/mob_spawn/human/fugitive/russian{
 	dir = 1
@@ -181,6 +216,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/docking_port/stationary{
+	dir = 1;
 	dwidth = 11;
 	height = 16;
 	id = "pirateship_home";
@@ -189,19 +225,23 @@
 	},
 /obj/docking_port/mobile{
 	dheight = 3;
+	dir = 1;
 	dwidth = 3;
 	height = 13;
 	id = "huntership";
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "hunter shuttle";
 	rechargeTime = 1800;
-	width = 15
+	width = 15;
+	faction_type = /datum/faction/independant
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
 "N" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 2
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/hunter)
 "O" = (
@@ -210,9 +250,54 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
+"P" = (
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/obj/machinery/portable_atmospherics/canister/toxins/high_capacity,
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/shuttle/hunter)
 "Q" = (
 /obj/item/book/manual/ripley_build_and_repair,
 /turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/hunter)
+"R" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/hunter)
+"S" = (
+/obj/effect/turf_decal/bot,
+/obj/machinery/portable_atmospherics/canister/toxins/high_capacity,
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"T" = (
+/obj/effect/turf_decal/bot,
+/obj/structure/closet/crate{
+	opened = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"U" = (
+/obj/machinery/portable_atmospherics/scrubber/huge,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"V" = (
+/obj/machinery/door/airlock/security/glass{
+	req_access_txt = "181"
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/hunter)
+"W" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/portable_atmospherics/canister/toxins/high_capacity,
+/turf/open/floor/plating,
 /area/shuttle/hunter)
 "X" = (
 /obj/structure/fans/tiny,
@@ -224,6 +309,11 @@
 "Y" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/mineral/plastitanium,
+/area/shuttle/hunter)
+"Z" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/hunter)
 
 (1,1,1) = {"
@@ -252,8 +342,8 @@ a
 a
 a
 b
-c
-c
+j
+j
 b
 a
 a
@@ -264,73 +354,73 @@ a
 "}
 (3,1,1) = {"
 a
-c
-c
+j
+j
 a
 b
 b
 b
-d
-d
+E
+E
 b
 b
 b
 a
-c
-c
+j
+j
 a
 "}
 (4,1,1) = {"
 b
-d
-d
+E
+E
 b
 b
 p
 t
-x
-B
+D
+T
 B
 F
 b
 b
-d
-d
+E
+E
 b
 "}
 (5,1,1) = {"
 b
+U
 e
-g
 b
-j
+W
 q
 u
-q
+d
 q
 u
 u
 H
 b
-g
-L
+c
+x
 b
 "}
 (6,1,1) = {"
 b
-e
-g
-O
-k
-k
-k
-k
-k
-D
-k
-k
-O
-g
+P
+h
+V
+R
+R
+R
+K
+R
+Z
+R
+R
+V
+i
 L
 b
 "}
@@ -339,7 +429,7 @@ b
 f
 g
 b
-x
+S
 k
 Y
 Y

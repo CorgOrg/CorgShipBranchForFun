@@ -6,28 +6,38 @@
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/hunter)
 "d" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
+/obj/machinery/power/smes,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "e" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/hunter)
-"f" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/shuttle/hunter)
-"g" = (
 /obj/structure/sign/warning/vacuum/external,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
 /turf/closed/wall/mineral/plastitanium,
 /area/shuttle/hunter)
+"f" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/hunter)
+"g" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/hunter)
 "h" = (
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "i" = (
@@ -36,12 +46,26 @@
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "j" = (
-/obj/effect/turf_decal/stripes/line,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "181"
+	},
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "k" = (
 /obj/structure/sign/poster/contraband/bountyhunters,
 /turf/closed/wall/mineral/plastitanium,
+/area/shuttle/hunter)
+"l" = (
+/obj/structure/table,
+/obj/item/binoculars,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "m" = (
 /obj/structure/chair/office{
@@ -64,16 +88,19 @@
 /turf/open/floor/pod/light,
 /area/shuttle/hunter)
 "q" = (
-/obj/structure/shuttle/engine/heater{
+/obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/structure/window/reinforced{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 8
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "r" = (
 /obj/machinery/computer/launchpad{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
 	dir = 4
 	},
 /turf/open/floor/pod/dark,
@@ -82,10 +109,10 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "t" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 4
 	},
-/turf/open/floor/pod/dark,
+/turf/open/floor/plating/airless,
 /area/shuttle/hunter)
 "u" = (
 /obj/structure/curtain/bounty,
@@ -120,7 +147,8 @@
 /area/shuttle/hunter)
 "A" = (
 /obj/machinery/computer/shuttle_flight/hunter{
-	dir = 8
+	dir = 8;
+	icon_state = "computer"
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
@@ -133,27 +161,48 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "D" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
+/obj/structure/table,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 10
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/hunter)
+"E" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/hunter)
+"F" = (
+/obj/structure/curtain/bounty,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
-"E" = (
-/obj/structure/table,
-/obj/item/binoculars,
-/turf/open/floor/pod/dark,
-/area/shuttle/hunter)
-"F" = (
-/obj/machinery/power/smes,
-/turf/open/floor/pod/dark,
-/area/shuttle/hunter)
 "G" = (
-/obj/machinery/fugitive_capture,
-/turf/open/floor/pod/dark,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 10
+	},
+/turf/open/floor/plating,
 /area/shuttle/hunter)
 "H" = (
 /obj/effect/turf_decal/stripes/line{
-	dir = 10
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"I" = (
+/obj/structure/table,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/hunter)
@@ -165,11 +214,28 @@
 /obj/machinery/suit_storage_unit/open,
 /turf/open/floor/pod/light,
 /area/shuttle/hunter)
+"L" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 9
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
 "M" = (
 /obj/effect/mob_spawn/human/fugitive/bounty/armor{
-	dir = 1
+	dir = 1;
+	icon_state = "sleeper"
 	},
 /turf/open/floor/pod/light,
+/area/shuttle/hunter)
+"N" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
 /area/shuttle/hunter)
 "O" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -193,29 +259,78 @@
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "hunter shuttle";
 	rechargeTime = 1800;
-	width = 15
+	width = 15;
+	faction_type = /datum/faction/independant
 	},
 /turf/open/floor/plating,
 /area/shuttle/hunter)
 "P" = (
 /obj/structure/fluff/empty_sleeper{
-	dir = 1
+	dir = 1;
+	icon_state = "sleeper-open"
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/hunter)
+"Q" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden,
+/turf/open/floor/plating,
+/area/shuttle/hunter)
 "R" = (
+/obj/machinery/portable_atmospherics/canister/toxins/high_capacity,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/item/wrench,
+/turf/open/floor/pod/dark,
+/area/shuttle/hunter)
+"S" = (
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/hunter)
+"T" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/hunter)
+"U" = (
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/hunter)
+"V" = (
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/obj/machinery/door/airlock/external{
+	req_access_txt = "181"
+	},
+/turf/open/floor/plating,
+/area/shuttle/hunter)
+"W" = (
+/obj/machinery/fugitive_capture,
+/obj/machinery/atmospherics/pipe/simple/supplymain/hidden{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/hunter)
+"X" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/hunter)
+"Y" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
 /obj/machinery/door/airlock/external{
 	req_access_txt = "181"
 	},
-/turf/open/floor/plating,
-/area/shuttle/hunter)
-"V" = (
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/obj/machinery/door/airlock/external{
-	req_access_txt = "181"
+/obj/machinery/atmospherics/pipe/manifold/supplymain/hidden{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/shuttle/hunter)
@@ -260,9 +375,9 @@ a
 a
 b
 a
-e
+X
 a
-e
+X
 a
 b
 a
@@ -272,61 +387,61 @@ b
 (4,1,1) = {"
 b
 a
-e
+X
 b
-b
-q
+T
+E
 i
-q
+E
+T
 b
-b
-e
+X
 a
 b
 "}
 (5,1,1) = {"
 b
+T
+t
 b
-f
-b
-b
+U
 r
 B
-F
+d
+U
 b
-b
-f
-b
+t
+T
 b
 "}
 (6,1,1) = {"
 b
+U
+e
 b
-g
-b
-b
-s
+S
+f
 C
-G
+W
+S
 b
-b
-g
-b
+e
+U
 b
 "}
 (7,1,1) = {"
 V
-d
+G
 h
+Q
+Y
+N
+q
+g
 j
-R
-t
-D
 H
-V
-d
 h
-j
+L
 O
 "}
 (8,1,1) = {"
@@ -336,7 +451,7 @@ i
 b
 b
 u
-u
+F
 u
 b
 b
@@ -351,7 +466,7 @@ i
 b
 m
 v
-s
+f
 s
 J
 b
@@ -366,7 +481,7 @@ i
 k
 n
 w
-x
+I
 s
 J
 b
@@ -381,7 +496,7 @@ a
 b
 n
 x
-E
+l
 s
 K
 b
@@ -396,7 +511,7 @@ a
 b
 o
 y
-s
+f
 s
 J
 b
@@ -411,7 +526,7 @@ a
 i
 b
 u
-u
+F
 u
 b
 i
@@ -426,7 +541,7 @@ a
 i
 p
 s
-s
+f
 s
 P
 i
@@ -441,7 +556,7 @@ a
 i
 Z
 z
-s
+f
 z
 M
 i
@@ -456,8 +571,8 @@ a
 b
 i
 A
-n
-s
+D
+R
 i
 b
 a

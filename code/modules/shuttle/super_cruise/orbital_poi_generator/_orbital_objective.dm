@@ -1,13 +1,20 @@
+#define REWARD_MONEY "MONEY"
+
 /datum/orbital_objective
+	//Static variables
+	var/static/objective_num = 0
+
+	//Type dependant
 	var/name = "Null Objective"
-	var/datum/orbital_object/z_linked/beacon/ruin/linked_beacon
-	var/payout = 0
-	var/completed = FALSE
 	var/min_payout = 0
 	var/max_payout = 0
+	var/weight = 0
+
+	//Instance dependent
+	var/payout = 0
+	var/completed = FALSE
 	var/id = 0
 	var/station_name
-	var/static/objective_num = 0
 
 /datum/orbital_objective/New()
 	. = ..()
@@ -15,9 +22,6 @@
 	station_name = new_station_name()
 
 /datum/orbital_objective/proc/on_assign(obj/machinery/computer/objective/objective_computer)
-	return
-
-/datum/orbital_objective/proc/generate_objective_stuff(turf/chosen_turf)
 	return
 
 /datum/orbital_objective/proc/check_failed()
@@ -33,21 +37,17 @@
 	payout = rand(min_payout, max_payout)
 
 /datum/orbital_objective/proc/generate_attached_beacon()
-	linked_beacon = new
-	linked_beacon.name = "(OBJECTIVE) [linked_beacon.name]"
-	linked_beacon.linked_objective = src
+	return
 
 /datum/orbital_objective/proc/complete_objective()
+	if (SSorbits.current_objective == src)
+		SSorbits.current_objective = null
 	if(completed)
-		//Delete
-		QDEL_NULL(SSorbits.current_objective)
 		return
 	completed = TRUE
 	//Handle payout
 	SSeconomy.distribute_funds(payout)
-	GLOB.exploration_points += payout
 	//Announcement
-	priority_announce("Central Command priority objective completed. [payout] credits have been \
-		distributed across departmental budgets. [payout] points have been distributed to exploration vendors.", "Central Command Report", SSstation.announcer.get_rand_report_sound())
-	//Delete
-	QDEL_NULL(SSorbits.current_objective)
+	priority_announce("Central Command priority objective completed. [payout] credits have been distributed across departmental budgets.", "Central Command Report", SSstation.announcer.get_rand_report_sound())
+	//Objective completed
+	SSorbits.completed_objectives += src

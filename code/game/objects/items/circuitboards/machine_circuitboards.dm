@@ -301,6 +301,15 @@
 		/obj/item/stack/sheet/mineral/uranium = 10,
 		/obj/item/stack/sheet/mineral/plasma = 5)
 
+/obj/item/circuitboard/machine/shuttle/shield
+	name = "shuttle shield generator (Machine Board)"
+	icon_state = "science"
+	build_path = /obj/machinery/power/shuttle_shield_generator
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stock_parts/micro_laser = 1
+	)
+
 /obj/item/circuitboard/machine/shuttle/engine
 	name = "thruster (Machine Board)"
 	icon_state = "engineering"
@@ -314,6 +323,17 @@
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stock_parts/micro_laser = 1)
 
+/obj/item/circuitboard/machine/shuttle/engine/ion
+	name = "ion thruster (Machine Board)"
+	build_path = /obj/machinery/shuttle/engine/ion
+	req_components = list(/obj/item/stock_parts/capacitor = 2,
+		/obj/item/stack/cable_coil = 5,
+		/obj/item/stock_parts/micro_laser = 1)
+
+/obj/item/circuitboard/machine/shuttle/engine/ion/burst
+	name = "ion burst thruster (Machine Board)"
+	build_path = /obj/machinery/shuttle/engine/ion/burst
+
 /obj/item/circuitboard/machine/shuttle/engine/void
 	name = "void thruster (Machine Board)"
 	build_path = /obj/machinery/shuttle/engine/void
@@ -323,9 +343,16 @@
 
 /obj/item/circuitboard/machine/shuttle/heater
 	name = "electronic engine heater (Machine Board)"
-	build_path = /obj/machinery/atmospherics/components/unary/shuttle/heater
+	build_path = /obj/machinery/atmospherics/components/unary/shuttle/engine_heater
 	req_components = list(/obj/item/stock_parts/micro_laser = 2,
 		/obj/item/stock_parts/matter_bin = 1)
+
+/obj/item/circuitboard/machine/shuttle/capacitor_bank
+	name = "ion thruster capacitor bank (Machine Board)"
+	build_path = /obj/machinery/power/engine_capacitor_bank
+	req_components = list(
+		/obj/item/stock_parts/capacitor = 3,
+		/obj/item/stock_parts/micro_laser = 1)
 
 /obj/item/circuitboard/machine/plasma_refiner
 	name = "plasma refinery (Machine Board)"
@@ -1180,15 +1207,6 @@
 	req_components = list(
 		/obj/item/stack/sheet/glass = 1,
 		/obj/item/stock_parts/matter_bin = 3)
-
-/obj/item/circuitboard/machine/exploration_equipment_vendor
-	name = "exploration equipment vendor (Machine Board)"
-	icon_state = "supply"
-	build_path = /obj/machinery/vendor/exploration
-	req_components = list(
-		/obj/item/stack/sheet/glass = 1,
-		/obj/item/stock_parts/matter_bin = 3)
-
 
 /obj/item/circuitboard/machine/mining_equipment_vendor/golem
 	name = "golem ship equipment vendor (Machine Board)"

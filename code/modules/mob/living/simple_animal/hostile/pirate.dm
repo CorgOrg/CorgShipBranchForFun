@@ -26,7 +26,8 @@
 	del_on_death = TRUE
 	faction = list("pirate")
 	mobchatspan = "syndmob"
-
+	human_outfit_replacement = /datum/outfit/simplemob/pirate
+	antagonist_name = "Pirate Ghost Spawn"
 
 /mob/living/simple_animal/hostile/pirate/melee
 	name = "Pirate Swashbuckler"

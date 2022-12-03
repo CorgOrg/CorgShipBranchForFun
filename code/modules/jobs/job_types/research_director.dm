@@ -55,6 +55,7 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/research_director
 	l_hand = /obj/item/clipboard
 	l_pocket = /obj/item/laser_pointer
+	r_pocket = /obj/item/navigation_map
 	backpack_contents = list(/obj/item/melee/classic_baton/police/telescopic=1)
 
 	backpack = /obj/item/storage/backpack/science

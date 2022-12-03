@@ -241,6 +241,7 @@ interface with the mining shuttle at the landing site if a mobile beacon is also
 	dwidth = 4
 	width = 9
 	height = 9
+	shuttle_object_type = /datum/orbital_object/shuttle/aux_base
 
 /obj/docking_port/mobile/auxillary_base/Initialize(mapload)
 	. = ..()

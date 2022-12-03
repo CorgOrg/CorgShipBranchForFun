@@ -176,7 +176,7 @@
 	id = "nuclear_gun"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 1000)
-	build_path = /obj/item/gun/energy/e_gun/nuclear
+	build_path = /obj/item/gun/energy/e_gun/nuclear/no_crystal
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -227,7 +227,7 @@
 	id = "temp_gun"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 500, /datum/material/silver = 3000)
-	build_path = /obj/item/gun/energy/temperature
+	build_path = /obj/item/gun/energy/temperature/no_crystal
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -282,13 +282,23 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL
 
+/datum/design/e_gun
+	name = "Energy Gun"
+	desc = "A standard issue energy gun. Requires a focusing crystal to be installed in order to use."
+	id = "energy_gun"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT * 5, /datum/material/uranium = MINERAL_MATERIAL_AMOUNT * 2, /datum/material/plastic = MINERAL_MATERIAL_AMOUNT * 10)
+	build_path = /obj/item/gun/energy/e_gun/printed
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/xray
 	name = "X-ray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
 	id = "xray_laser"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 5000, /datum/material/uranium = 4000, /datum/material/iron = 5000, /datum/material/titanium = 2000, /datum/material/bluespace = 2000)
-	build_path = /obj/item/gun/energy/xray
+	build_path = /obj/item/gun/energy/xray/no_crystal
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -298,7 +308,7 @@
 	id = "ioncarbine"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 6000, /datum/material/iron = 8000, /datum/material/uranium = 2000)
-	build_path = /obj/item/gun/energy/ionrifle/carbine
+	build_path = /obj/item/gun/energy/ionrifle/carbine/no_crystal
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -419,3 +429,104 @@
 	build_path = /obj/item/flashbulb
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+//=======================================
+// Shuttle Weapons
+//=======================================
+
+/datum/design/board/weapons
+	name = "Shuttle Weapons Control Computer"
+	desc = "A computer board that allows for the control of weapons on a linked shuttle."
+	id = "computer_weapons"
+	build_type = IMPRINTER
+	materials = list(/datum/material/glass = 1000, /datum/material/copper = 300)
+	build_path = /obj/item/circuitboard/computer/shuttle/weapons
+	category = list("Shuttle Machinery")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/shuttle_weapon
+	name = "Laser Cannon Mount"
+	desc = "A wall mounted laser cannon, designed for use on shuttles."
+	id = "shuttle_laser"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 25000, /datum/material/glass = 10000)
+	category = list("Shuttle Weapons")
+	build_path = /obj/item/wallframe/shuttle_weapon/laser
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/shuttle_weapon/laser_triple
+	name = "Burst Laser MKI Mount"
+	desc=  "A wall mounted burst laser, designed for use on shuttles."
+	id = "shuttle_laser_burst"
+	materials = list(/datum/material/iron = 35000, /datum/material/glass = 10000, /datum/material/gold = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/laser/triple
+
+/datum/design/shuttle_weapon/laser_triple_mark2
+	name = "Burst Laser MKII Mount"
+	desc=  "An upgraded version of the wall mounted burst laser, designed for use on shuttles."
+	id = "shuttle_laser_burst_two"
+	materials = list(/datum/material/iron = 40000, /datum/material/glass = 15000, /datum/material/gold = 10000, /datum/material/titanium = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/laser/triple/mark2
+
+/datum/design/shuttle_weapon/missile
+	name = "Centaur I Mount"
+	desc=  "A wall mounted missile launcher, designed for use on shuttles."
+	id = "shuttle_missile"
+	materials = list(/datum/material/iron = 30000, /datum/material/gold = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/missile
+
+/datum/design/shuttle_weapon/tri_missile
+	name = "Centaur II Mount"
+	desc=  "Wall mounted pods containing tri-firing missiles, designed for use on shuttles."
+	id = "shuttle_tri_missile"
+	materials = list(/datum/material/iron = 50000, /datum/material/gold = 15000, /datum/material/diamond = 1000)
+	build_path = /obj/item/wallframe/shuttle_weapon/missile/tri
+
+/datum/design/shuttle_weapon/breach_missile
+	name = "Breaching Missile Mount"
+	desc=  "A wall mounted breaching missile launcher, designed for use on shuttles."
+	id = "shuttle_breach_missile"
+	materials = list(/datum/material/iron = 40000, /datum/material/gold = 10000, /datum/material/titanium = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/missile/breach
+
+/datum/design/shuttle_weapon/fire_missile
+	name = "Inferno Missile Mount"
+	desc=  "A wall mounted incendiary missile launcher, designed for use on shuttles."
+	id = "shuttle_fire_missile"
+	materials = list(/datum/material/iron = 40000, /datum/material/gold = 10000, /datum/material/uranium = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/missile/fire
+
+/datum/design/shuttle_weapon/point_defense_one
+	name = "Hades MKI Chaincannon Mount"
+	desc=  "A wall mounted automatic chain channon with limited capability to destroy hull, but extremely powerful at taking down crews and machinery. Designed for use on shuttles."
+	id = "shuttle_point_defense"
+	materials = list(/datum/material/iron = 30000, /datum/material/glass = 10000)
+	build_path = /obj/item/wallframe/shuttle_weapon/point_defense
+
+/datum/design/shuttle_weapon/point_defense_two
+	name = "Hades MKII Chaincannon Mount"
+	desc=  "An upgraded version of the MKI Hades. While less accurate and slower to reload, it has a larger volley size. Designed for use on shuttles."
+	id = "shuttle_point_defense_upgraded"
+	materials = list(/datum/material/iron = 50000, /datum/material/glass = 15000, /datum/material/gold = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/point_defense/upgraded
+
+/datum/design/shuttle_weapon/scatter_shot
+	name = "Ares Scattershot Mount"
+	desc=  "A powerful flak cannon that fires 8 projectiles at once. Designed for use on shuttles."
+	id = "shuttle_scatter_shot"
+	materials = list(/datum/material/iron = 80000, /datum/material/glass = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/scatter
+
+/datum/design/shuttle_weapon/railgun
+	name = "Zeus MKI Railgun Mount"
+	desc=  "A kinetic weapon designed for long ranged precision shots. Designed for use on shuttles."
+	id = "shuttle_railgun"
+	materials = list(/datum/material/iron = 60000, /datum/material/glass = 20000, /datum/material/copper = 10000, /datum/material/diamond = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/railgun
+
+/datum/design/shuttle_weapon/railgun_crew
+	name = "Zeus MKII Anti-Personnel Railgun Mount"
+	desc=  "A kinetic weapon that fired uranium coated magnetic rounds. Designed for long ranged precision shots. Designed for use on shuttles."
+	id = "shuttle_railgun_crew"
+	materials = list(/datum/material/iron = 60000, /datum/material/glass = 20000, /datum/material/copper = 10000, /datum/material/diamond = 5000, /datum/material/uranium = 5000)
+	build_path = /obj/item/wallframe/shuttle_weapon/railgun/anti_crew

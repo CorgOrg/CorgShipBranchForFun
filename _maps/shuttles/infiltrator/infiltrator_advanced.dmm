@@ -50,9 +50,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/bridge)
-"ah" = (
-/turf/open/floor/mineral/plastitanium,
-/area/shuttle/syndicate/bridge)
 "ai" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -214,8 +211,9 @@
 /obj/machinery/power/apc/syndicate{
 	aidisabled = 1;
 	area = "/area/shuttle/syndicate/bridge";
+	dir = 2;
 	name = "Infiltrator E.V.A APC";
-	pixel_y = -26
+	pixel_y = -24
 	},
 /obj/structure/cable/yellow,
 /turf/open/floor/mineral/plastitanium/red,
@@ -263,6 +261,7 @@
 	},
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
+	icon_state = "alarm0";
 	pixel_y = -24
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -297,6 +296,7 @@
 /area/shuttle/syndicate/airlock)
 "aC" = (
 /obj/structure/chair/fancy/shuttle{
+	dir = 2;
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot,
@@ -310,6 +310,7 @@
 /area/shuttle/syndicate/airlock)
 "aE" = (
 /obj/structure/chair/fancy/shuttle{
+	dir = 2;
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot,
@@ -350,6 +351,7 @@
 /area/shuttle/syndicate/eva)
 "aI" = (
 /obj/structure/chair/fancy/shuttle{
+	dir = 2;
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot,
@@ -364,6 +366,7 @@
 /area/shuttle/syndicate/airlock)
 "aK" = (
 /obj/structure/chair/fancy/shuttle{
+	dir = 2;
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot,
@@ -372,7 +375,7 @@
 	area = "/area/shuttle/syndicate/airlock";
 	dir = 4;
 	name = "Infiltrator Airlock APC";
-	pixel_x = 28
+	pixel_x = 24
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
@@ -451,17 +454,24 @@
 	area = "/area/shuttle/syndicate/hallway";
 	dir = 1;
 	name = "Infiltrator APC";
-	pixel_y = 26
+	pixel_y = 24
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
 /obj/machinery/airalarm/syndicate{
 	dir = 8;
+	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/hallway)
+"aT" = (
+/obj/structure/sign/warning/vacuum/external{
+	layer = 4
+	},
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/syndicate/airlock)
 "aU" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -755,6 +765,7 @@
 /area/shuttle/syndicate/eva)
 "bu" = (
 /obj/structure/chair/fancy/shuttle{
+	dir = 2;
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot,
@@ -779,12 +790,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/shuttle/syndicate/airlock)
-"bw" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/effect/turf_decal/stripes/box,
-/obj/effect/turf_decal/stripes/box,
-/turf/open/floor/plating,
-/area/shuttle/syndicate/medical)
 "bx" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
@@ -846,12 +851,6 @@
 /area/shuttle/syndicate/medical)
 "bE" = (
 /turf/closed/wall/r_wall/syndicate,
-/area/shuttle/syndicate/armory)
-"bF" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/effect/turf_decal/stripes/box,
-/obj/effect/turf_decal/stripes/box,
-/turf/open/floor/plating,
 /area/shuttle/syndicate/armory)
 "bG" = (
 /obj/effect/turf_decal/stripes/line,
@@ -969,7 +968,7 @@
 	area = "/area/shuttle/syndicate/eva";
 	dir = 1;
 	name = "Infiltrator E.V.A APC";
-	pixel_y = 26
+	pixel_y = 24
 	},
 /turf/open/floor/pod/dark,
 /area/shuttle/syndicate/eva)
@@ -1053,7 +1052,8 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/stripes/red/corner{
-	dir = 8
+	dir = 8;
+	icon_state = "warninglinecorner_red"
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/armory)
@@ -1129,6 +1129,7 @@
 /obj/effect/turf_decal/box,
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
+	icon_state = "alarm0";
 	pixel_y = -24
 	},
 /turf/open/floor/pod/dark,
@@ -1314,14 +1315,6 @@
 /obj/structure/shuttle/engine/heater,
 /turf/open/floor/plating,
 /area/shuttle/syndicate/medical)
-"cy" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/shuttle/syndicate/medical)
 "cz" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -1350,13 +1343,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/shuttle/syndicate/medical)
-"cD" = (
-/obj/structure/shuttle/engine/large,
-/obj/effect/turf_decal/stripes/line{
-	dir = 10
-	},
-/turf/open/floor/plating,
-/area/shuttle/syndicate/hallway)
 "cE" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
@@ -1374,11 +1360,6 @@
 /obj/structure/shuttle/engine/heater,
 /turf/open/floor/plating,
 /area/shuttle/syndicate/armory)
-"cI" = (
-/obj/structure/shuttle/engine/large,
-/obj/effect/turf_decal/stripes/line,
-/turf/open/floor/plating,
-/area/shuttle/syndicate/hallway)
 "cJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -1391,10 +1372,6 @@
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/shuttle/syndicate/armory)
-"cL" = (
-/obj/structure/shuttle/engine/large,
-/turf/open/floor/plating,
-/area/shuttle/syndicate/medical)
 "cM" = (
 /obj/structure/shuttle/engine/heater,
 /turf/closed/wall/r_wall/syndicate,
@@ -1405,14 +1382,6 @@
 /obj/structure/shuttle/engine/heater,
 /turf/open/floor/plating,
 /area/shuttle/syndicate/hallway)
-"cO" = (
-/obj/structure/shuttle/engine/propulsion,
-/obj/effect/turf_decal/stripes/line,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/shuttle/syndicate/armory)
 "cP" = (
 /turf/open/floor/plating,
 /area/shuttle/syndicate/medical)
@@ -1427,10 +1396,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/turf/open/floor/plating,
-/area/shuttle/syndicate/armory)
-"cS" = (
-/obj/structure/shuttle/engine/large,
 /turf/open/floor/plating,
 /area/shuttle/syndicate/armory)
 "cT" = (
@@ -1467,6 +1432,7 @@
 	dheight = 1;
 	dir = 8;
 	dwidth = 12;
+	faction_type = /datum/faction/syndicate/gorlex;
 	height = 17;
 	hidden = 1;
 	id = "syndicate";
@@ -1605,6 +1571,7 @@
 	},
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
+	icon_state = "alarm0";
 	pixel_y = -24
 	},
 /obj/effect/turf_decal/stripes/line{
@@ -1636,6 +1603,7 @@
 	},
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
+	icon_state = "alarm0";
 	pixel_y = -24
 	},
 /obj/effect/decal/cleanable/dirt,
@@ -1651,6 +1619,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/airalarm/syndicate{
 	dir = 8;
+	icon_state = "alarm0";
 	pixel_x = 24
 	},
 /turf/open/floor/mineral/plastitanium/red,
@@ -1925,7 +1894,7 @@
 	area = "/area/shuttle/syndicate/medical";
 	dir = 8;
 	name = "Infiltrator Medical APC";
-	pixel_x = -28
+	pixel_x = -24
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -1982,7 +1951,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 8
+	dir = 8;
+	icon_state = "warningline_red"
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/cable/yellow{
@@ -2004,7 +1974,7 @@
 	area = "/area/shuttle/syndicate/armory";
 	dir = 4;
 	name = "Infiltrator Armory APC";
-	pixel_x = 28
+	pixel_x = 24
 	},
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -2053,7 +2023,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/stripes/red/line{
-	dir = 8
+	dir = 8;
+	icon_state = "warningline_red"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/sign/departments/engineering{
@@ -2111,8 +2082,7 @@
 "dX" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
-	dir = 5;
-	icon_state = "pipe11-2"
+	dir = 5
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/armory)
@@ -2273,7 +2243,8 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/box/corners{
-	dir = 8
+	dir = 8;
+	icon_state = "box_corners"
 	},
 /obj/machinery/light{
 	dir = 4
@@ -2415,8 +2386,7 @@
 "et" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/manifold/supply/visible{
-	dir = 8;
-	icon_state = "manifold-2"
+	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/armory)
@@ -2437,6 +2407,59 @@
 "ev" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/shuttle/syndicate/hallway)
+"gE" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/machinery/shuttle/engine/advanced/large,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/hallway)
+"kM" = (
+/obj/machinery/shuttle/engine/advanced/large,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/armory)
+"nc" = (
+/obj/machinery/computer/locator,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/bridge)
+"nJ" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/shuttle/engine/advanced,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/medical)
+"xo" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/shuttle/engine/advanced,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/armory)
+"DV" = (
+/obj/machinery/shuttle/engine/advanced/large,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/medical)
+"Rn" = (
+/obj/effect/turf_decal/stripes/box,
+/obj/effect/turf_decal/stripes/box,
+/obj/machinery/shuttle/engine/advanced,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/armory)
+"TY" = (
+/obj/effect/turf_decal/stripes/box,
+/obj/effect/turf_decal/stripes/box,
+/obj/machinery/shuttle/engine/advanced,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/medical)
+"Ul" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/machinery/shuttle/engine/advanced/large,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/hallway)
 
 (1,1,1) = {"
 ad
@@ -2451,7 +2474,7 @@ ad
 ad
 en
 bn
-bw
+TY
 ad
 ad
 ad
@@ -2470,7 +2493,7 @@ ad
 ad
 aO
 bp
-aL
+aT
 aO
 bD
 bD
@@ -2478,7 +2501,7 @@ bD
 bD
 bD
 bn
-bw
+TY
 ad
 ad
 ad
@@ -2527,7 +2550,7 @@ dz
 dD
 dT
 bn
-cy
+nJ
 ad
 "}
 (5,1,1) = {"
@@ -2551,7 +2574,7 @@ dE
 dU
 cx
 cA
-cL
+DV
 "}
 (6,1,1) = {"
 ad
@@ -2618,7 +2641,7 @@ bP
 dA
 cj
 bn
-cy
+nJ
 ad
 ad
 "}
@@ -2642,12 +2665,12 @@ ec
 ck
 cM
 cz
-cD
+gE
 ad
 "}
 (10,1,1) = {"
 ab
-ah
+nc
 ao
 av
 aF
@@ -2711,7 +2734,7 @@ dC
 cn
 cN
 cX
-cI
+Ul
 ad
 "}
 (13,1,1) = {"
@@ -2756,7 +2779,7 @@ ed
 el
 dO
 cG
-cO
+xo
 ad
 ad
 "}
@@ -2804,7 +2827,7 @@ dQ
 dW
 cH
 cQ
-cS
+kM
 "}
 (17,1,1) = {"
 ad
@@ -2849,7 +2872,7 @@ dZ
 eb
 eu
 cG
-cO
+xo
 ad
 "}
 (19,1,1) = {"
@@ -2884,7 +2907,7 @@ ad
 ad
 aO
 cW
-aL
+aT
 aO
 bE
 bE
@@ -2892,7 +2915,7 @@ bE
 bE
 bE
 cG
-bF
+Rn
 ad
 ad
 ad
@@ -2911,7 +2934,7 @@ ad
 ad
 eq
 cG
-bF
+Rn
 ad
 ad
 ad

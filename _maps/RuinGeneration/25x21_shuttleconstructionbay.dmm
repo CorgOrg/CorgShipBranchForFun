@@ -1,17 +1,16 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/door/window/northleft,
+/turf/open/floor/plating/airless,
+/area/template_noop)
 "as" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
-/area/ruin/unpowered)
-"ay" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
 /area/ruin/unpowered)
 "aY" = (
 /obj/machinery/door/airlock/external/glass,
@@ -24,13 +23,12 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"bj" = (
-/obj/structure/frame/computer,
-/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+"br" = (
+/obj/effect/turf_decal/tile/neutral/opposingcorners{
 	dir = 1
 	},
-/turf/open/floor/mineral/titanium/airless,
-/area/template_noop)
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
 "cY" = (
 /obj/machinery/door/airlock/external/glass,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -56,13 +54,6 @@
 "hf" = (
 /turf/closed/wall,
 /area/ruin/unpowered)
-"hB" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral/opposingcorners,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered)
 "ib" = (
 /obj/machinery/shuttle/engine/plasma{
 	dir = 1
@@ -79,6 +70,10 @@
 	},
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"km" = (
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
 "mf" = (
 /obj/structure/closet/firecloset/full,
 /turf/open/floor/plating/airless,
@@ -103,17 +98,17 @@
 /obj/machinery/portable_atmospherics/canister/toxins,
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"rJ" = (
-/obj/structure/door_assembly/door_assembly_com,
-/turf/open/floor/mineral/titanium/airless,
-/area/template_noop)
-"sH" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
+"qw" = (
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
 	dir = 1
 	},
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/door/window/northleft,
+/obj/machinery/door/window/northright,
 /turf/open/floor/plating/airless,
+/area/template_noop)
+"rJ" = (
+/obj/structure/door_assembly/door_assembly_com,
+/turf/open/floor/mineral/titanium/airless,
 /area/template_noop)
 "ts" = (
 /obj/structure/closet/emcloset,
@@ -130,6 +125,22 @@
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"tY" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral/opposingcorners{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
+"un" = (
+/obj/structure/sign/nanotrasen{
+	pixel_x = 32
+	},
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
 "vJ" = (
 /obj/item/stock_parts/cell/crap,
 /turf/open/floor/plating/airless,
@@ -164,7 +175,10 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered)
-"BT" = (
+"Bl" = (
+/obj/structure/sign/poster/random{
+	pixel_x = 32
+	},
 /obj/effect/turf_decal/tile/neutral/opposingcorners,
 /turf/open/floor/plasteel,
 /area/ruin/unpowered)
@@ -190,6 +204,16 @@
 	},
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"DG" = (
+/obj/machinery/atmospherics/components/unary/shuttle/engine_heater{
+	dir = 1
+	},
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/obj/structure/window/reinforced/spawner/west,
+/obj/machinery/door/window/northright,
+/turf/open/floor/plating/airless,
+/area/template_noop)
 "EO" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -202,14 +226,6 @@
 	dir = 4
 	},
 /turf/open/floor/plating,
-/area/template_noop)
-"Fx" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner,
-/obj/machinery/door/window/northright,
-/turf/open/floor/plating/airless,
 /area/template_noop)
 "FW" = (
 /obj/effect/turf_decal/stripes/line{
@@ -239,48 +255,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/ruin/unpowered)
-"HL" = (
-/obj/structure/frame/computer,
-/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
-	dir = 4
-	},
-/turf/open/floor/mineral/titanium/airless,
-/area/template_noop)
-"IO" = (
-/obj/structure/sign/poster/random{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/tile/neutral/opposingcorners,
-/turf/open/floor/plasteel,
+"KA" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ruin/unpowered)
-"Ky" = (
+"Ln" = (
 /obj/machinery/computer/shuttle_flight/custom_shuttle,
 /obj/effect/turf_decal/tile/blue/half/contrasted{
 	dir = 4
 	},
 /turf/open/floor/mineral/titanium/airless,
 /area/template_noop)
-"KA" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/ruin/unpowered)
-"Lp" = (
-/obj/effect/turf_decal/tile/neutral/opposingcorners{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/ruin/unpowered)
 "MD" = (
 /obj/structure/girder,
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"Oy" = (
-/obj/structure/sign/nanotrasen{
-	pixel_x = 32
-	},
-/obj/effect/turf_decal/tile/neutral/opposingcorners,
-/turf/open/floor/plasteel,
-/area/ruin/unpowered)
 "OB" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -314,16 +303,6 @@
 /obj/item/electronics/airlock,
 /turf/open/floor/plating/airless,
 /area/template_noop)
-"Sx" = (
-/obj/machinery/atmospherics/components/unary/shuttle/heater{
-	dir = 1
-	},
-/obj/structure/window/reinforced/spawner,
-/obj/structure/window/reinforced/spawner/east,
-/obj/structure/window/reinforced/spawner/west,
-/obj/machinery/door/window/northright,
-/turf/open/floor/plating/airless,
-/area/template_noop)
 "Th" = (
 /obj/machinery/vending/coffee,
 /obj/effect/turf_decal/stripes/line{
@@ -337,6 +316,13 @@
 "Tj" = (
 /turf/open/floor/plating/airless,
 /area/template_noop)
+"TS" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral/opposingcorners,
+/turf/open/floor/plasteel,
+/area/ruin/unpowered)
 "TV" = (
 /obj/machinery/atmospherics/components/unary/plasma_refiner{
 	dir = 4
@@ -346,6 +332,13 @@
 "Vz" = (
 /turf/open/floor/plating,
 /area/ruin/unpowered)
+"VQ" = (
+/obj/structure/frame/computer,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/airless,
+/area/template_noop)
 "VW" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -365,6 +358,13 @@
 	dir = 8
 	},
 /turf/open/floor/plating,
+/area/template_noop)
+"WZ" = (
+/obj/structure/frame/computer,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/mineral/titanium/airless,
 /area/template_noop)
 "XY" = (
 /obj/machinery/atmospherics/pipe/simple/purple/visible{
@@ -532,7 +532,7 @@ Tj
 Wh
 GG
 PL
-sH
+ac
 ib
 es
 Hx
@@ -564,7 +564,7 @@ es
 Hx
 es
 PH
-bj
+VQ
 nu
 nT
 Wh
@@ -579,7 +579,7 @@ Wh
 GG
 PL
 PL
-sH
+ac
 ib
 es
 "}
@@ -587,7 +587,7 @@ es
 Hx
 es
 PH
-Ky
+Ln
 eR
 nu
 rJ
@@ -602,7 +602,7 @@ Sk
 GG
 PL
 PL
-Sx
+DG
 ib
 es
 "}
@@ -610,7 +610,7 @@ es
 Hx
 es
 PH
-HL
+WZ
 nu
 nu
 Wh
@@ -625,7 +625,7 @@ Tj
 GG
 PL
 PL
-Fx
+qw
 ib
 es
 "}
@@ -670,7 +670,7 @@ Tj
 MD
 GG
 PL
-Fx
+qw
 ib
 es
 Hx
@@ -864,23 +864,23 @@ Hx
 KA
 KA
 KA
-ay
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
-Lp
+tY
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
 "}
 (23,1,1) = {"
 Hx
@@ -910,23 +910,23 @@ Hx
 KA
 KA
 KA
-hB
-BT
-BT
-BT
-BT
-BT
-Oy
-BT
-BT
-BT
-IO
-BT
-BT
-BT
-BT
-BT
-BT
+TS
+km
+km
+km
+km
+km
+un
+km
+km
+km
+Bl
+km
+km
+km
+km
+km
+km
 "}
 (25,1,1) = {"
 Hx
